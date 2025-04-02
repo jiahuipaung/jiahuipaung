@@ -1,4 +1,4 @@
-# Hi, this is Jiahui 👋🏻
+# Hi, Jiahui here 👋🏻
 
 <a href="https://github.com/iBug">
 <img

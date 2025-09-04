@@ -10,6 +10,7 @@
 </a>
 
 🎓 CS Master's Student @ Macau University  
+🎓 B.Eng @ Huazhong University of Science and Technology
 💻 Backend Engineer | Distributed Systems | Web3 
 
 ---

@@ -18,7 +18,7 @@
 Student @ Macau University
 
 - ✏️: C / C++ / Go / Python 
-- 🛠️: Linux / VS Code / Docker / MySQL
+- 🛠️: Linux / VS Code / Docker / MySQL / K8s
 - 🤏🏻: Javascript / React / HTML / CSS
 
 ## 📫 Connect With Me

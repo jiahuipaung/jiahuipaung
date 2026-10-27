@@ -1,71 +1,53 @@
-# Jiahui Pang / 庞嘉辉
+# Hi, I'm Jiahui 👋
 
-**Backend Engineering · Distributed Systems · AI/Agent Engineering**
+Go Backend · Distributed Systems · AI & Agents
 
-Computer Science master's student at the University of Macau, with a B.Eng. from Huazhong University of Science and Technology. I build backend and AI systems with a focus on explicit state, idempotency, failure recovery, and executable verification.
+I'm a Computer Science master's student at the University of Macau, with a bachelor's degree from Huazhong University of Science and Technology (HUST). I work mainly with Go and Python, with experience in commerce backends, search infrastructure, model platforms, and agent workflows.
 
-澳门大学计算机硕士在读，主要方向是 Go 后端、分布式工作流和 Agent 工程。相比堆叠组件，我更关注系统在重复请求、部分失败、消息乱序与外部调用结果不确定时，如何保持可恢复、可解释和可验证。
+澳门大学计算机硕士在读，本科毕业于华中科技大学。主要写 Go 和 Python，做过交易、搜索和模型平台相关的后端开发，最近也在探索 Agent 如何融入实际业务。我喜欢把开发中遇到的问题整理成能运行的项目，也记录做这些选择的原因。
 
-Open to 2027 new-grad opportunities in backend engineering and AI systems / 寻找 2027 届后端与 AI 系统方向机会。
+Looking for 2027 new-grad roles in backend and AI engineering / 寻找 2027 届后端与 AI 工程方向机会。
 
 [LinkedIn](https://www.linkedin.com/in/jiahui-pang-510065352/) · [Email](mailto:jiahuipaung@gmail.com)
 
-## Featured Projects / 代表项目
+## Projects / 项目
 
 ### [Model Gateway Lab](https://github.com/jiahuipaung/model-gateway-lab)
 
-An executable control plane for long-running AI generation tasks, built with Go and PostgreSQL. It models the failure windows around external model providers instead of treating every timeout as a simple retry.
+A Go control plane for asynchronous AI generation tasks. Handles idempotent submissions, uncertain provider responses, worker recovery, and event delivery, with a local Docker demo and PostgreSQL integration tests.
 
-一个面向长时 AI 生成任务的可运行控制面，重点处理“供应商已经受理、但本地没有收到响应”这类不确定结果，并验证后续恢复链路。
+模型调用超时后，任务究竟失败了，还是已经在供应商端执行？这个项目围绕长时生成任务，处理幂等提交、未知结果对账和故障恢复，并提供可本地复现的场景。
 
-- Idempotent task intake and tenant-scoped APIs
-- `UNKNOWN` reconciliation through a stable provider request key
-- Lease-based workers with per-attempt fencing tokens
-- Atomic terminal-state transitions with transactional outbox events
-- Deterministic fake provider, Docker demo, and PostgreSQL integration tests
+`Go` · `PostgreSQL` · `Docker`
 
-`Go` · `PostgreSQL` · `Docker` · `Distributed Systems`
-
-[Repository](https://github.com/jiahuipaung/model-gateway-lab) · [Failure model and guarantees](https://github.com/jiahuipaung/model-gateway-lab/blob/main/docs/design/failure-windows.md)
+[Code](https://github.com/jiahuipaung/model-gateway-lab) · [Design notes](https://github.com/jiahuipaung/model-gateway-lab/blob/main/docs/design/failure-windows.md)
 
 ### [GOrder](https://github.com/jiahuipaung/gorder)
 
-A Go microservice workflow covering order creation, stock checks, payment sessions, payment callbacks, and fulfilment. The project focuses on keeping business state explainable under duplicate messages, concurrent updates, and partial failures.
+A Go microservice project connecting orders, stock checks, Stripe payments, and fulfilment. Includes explicit state transitions and tests for duplicate payment events, concurrent updates, and message retries.
 
-一个围绕订单、库存、支付与履约展开的 Go 微服务项目。核心不是商城功能，而是通过显式状态机、数据库条件更新和消息确认语义，让重复与乱序事件能够安全重放。
-
-- Explicit order state transitions instead of arbitrary status updates
-- Database-level idempotency for payment and fulfilment commands
-- Stable Stripe idempotency keys for checkout creation
-- Mutually exclusive ACK/NACK paths with retry handoff failure handling
-- Replay, concurrency, webhook, and race-detector coverage
+串起下单、库存校验、支付回调到履约的业务流程。重点解决支付消息重复到达、订单状态并发更新和消费失败重试等问题，配有架构文档与测试。
 
 `Go` · `gRPC` · `MongoDB` · `MySQL` · `RabbitMQ` · `Stripe`
 
-[Repository](https://github.com/jiahuipaung/gorder) · [Architecture and reliability model](https://github.com/jiahuipaung/gorder/blob/main/docs/architecture/reliability.md)
+[Code](https://github.com/jiahuipaung/gorder) · [Architecture](https://github.com/jiahuipaung/gorder/blob/main/docs/architecture/overview.md)
 
-## Selected Engineering Work / 工程实践
+## More of My Work / 其他实践
 
 ### Global Search Infrastructure
 
-Participated in an online search migration from Algolia to Elasticsearch across multiple business indexes. My work included compatibility adapters, schema and filter normalization, transactional outbox workers, and dual-engine result comparison.
+Contributed to an Algolia-to-Elasticsearch migration, including API compatibility, schema and filter adaptation, reliable index synchronization, and search result comparison.
 
-参与运行中搜索基础设施迁移，重点处理调用契约兼容、异构数据同步与搜索质量验证；通过 Outbox、租约、领取令牌和版本控制，使至少一次投递下的重复、乱序与失败恢复能够收敛。
+参与在线搜索迁移，处理新旧引擎的接口兼容、数据同步与结果差异。一次预发布故障测试让我进一步理解了“有重试”和“任务不会丢”之间的区别，也推动了写链路向 Transactional Outbox 演进。
 
 ### Multi-Agent Content Workflow
 
-Worked on a multi-agent content workflow for crypto knowledge production, separating planning and brief validation from the more expensive writing pipeline. I implemented typed contracts, deterministic audits, selective semantic judging, reflection loops, and constrained access to external data.
+Contributed to a multi-agent workflow for crypto content production. My subsequent implementation explores separate brief and article pipelines, structured outputs, rule-based audits, and feedback-driven revision.
 
-参与并实现多 Agent 内容生产工作流，将 Brief 与 Article Pipeline 解耦：代码负责状态、预算、重试和质量闸门，模型负责规划、写作与语义判断；能用确定性规则解决的问题不交给 LLM。
+参与 Crypto 内容生产工作流，并在后续实现中探索选题与写作分阶段、结构化输出、规则审计和反馈修订。我关心的是如何把规划、检索、写作和审核组织成一个能持续运行的流程。
 
-## Current Focus / 当前关注
+## Exploring / 最近在探索
 
-- Reliable execution for long-running AI tasks and uncertain provider outcomes
-- Idempotency, Outbox/Inbox, reconciliation, and observable distributed workflows
-- Agent harnesses with typed state, bounded tools, evaluation, and human handoff
-
-Primary tools: `Go` · `Python` · `PostgreSQL / MySQL` · `Redis` · `RabbitMQ / Kafka` · `gRPC` · `Docker / Kubernetes` · `Elasticsearch` · `OpenTelemetry`
-
-## Connect / 联系我
-
-[LinkedIn](https://www.linkedin.com/in/jiahui-pang-510065352/) · [Email](mailto:jiahuipaung@gmail.com) · [GitHub](https://github.com/jiahuipaung)
+- Long-running AI tasks: recovery, reconciliation, and provider integration / AI 长任务与模型平台
+- Agent workflows: tool use, evaluation, and human review / Agent 工具调用、评测与人工审核
+- Turning project lessons into code and design notes / 把项目经验整理成代码与设计记录

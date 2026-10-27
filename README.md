@@ -10,6 +10,26 @@ Looking for 2027 new-grad roles in backend and AI engineering / 寻找 2027 届�
 
 [LinkedIn](https://www.linkedin.com/in/jiahui-pang-510065352/) · [Email](mailto:jiahuipaung@gmail.com)
 
+## Experience / 工作与实习经历
+
+### Bybit · Backend & AI Agent Engineering Intern / 后端与 Agent 开发实习生
+
+May–Aug 2026 · Consumer Growth
+
+Worked on search infrastructure migration and multi-agent content workflows. 参与统一搜索服务迁移与多 Agent 内容生产系统。
+
+### Qiniu Cloud / 七牛云 · Backend Engineering Intern / 后端开发实习生
+
+Dec 2025–Mar 2026 · LLM Inference Platform
+
+Contributed to the MaaS platform, including trial-access controls, multimodal model integration, and asynchronous generation tasks. 参与 MaaS 平台开发，涉及体验期访问治理、多模态模型接入与异步生成任务。
+
+### TP-Link · Backend Engineer / 后端开发工程师
+
+Jul 2023–Mar 2025 · Full-time / 全职
+
+Developed order, payment, and inventory services for virtual-product sales and subscriptions on an IoT platform. 从事物联平台虚拟商品销售与订阅业务的订单、支付和库存后端开发。
+
 ## Projects / 项目
 
 ### [Model Gateway Lab](https://github.com/jiahuipaung/model-gateway-lab)

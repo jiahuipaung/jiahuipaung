@@ -1,50 +1,61 @@
-# Hi, I'm Jiahui 👋🏻
+# Hi, I'm Jiahui 👋
 
-<a href="https://github.com/jiahuipaung">
-<img
-  src="https://github-readme-stats.vercel.app/api?username=jiahuipaung&count_private=true&show_icons=true&icon_color=f3437a&bg_color=30,f2ffe6,e6ffff"
-  title="Jiahui's GitHub Stats"
-  align="right"
-  width="60%"
-/>
-</a>
+Go Backend · Distributed Systems · AI & Agents
 
-- 🎓 CS Master's Student @ UM
-- 🎓 B.Eng @ HUST
-- 💻 Backend Engineer | Distributed Systems | Web3 
+I'm a Computer Science master's student at the University of Macau, with a bachelor's degree from Huazhong University of Science and Technology (HUST). I work mainly with Go and Python, with experience in commerce backends, search infrastructure, model platforms, and agent workflows.
 
----
+澳门大学计算机硕士在读，本科毕业于华中科技大学。主要写 Go 和 Python，做过交易、搜索和模型平台相关的后端开发，最近也在探索 Agent 如何融入实际业务。我喜欢把开发中遇到的问题整理成能运行的项目，也记录做这些选择的原因。
 
-### 🛠️ Tech Stack
+Looking for 2027 new-grad roles in backend and AI engineering / 寻找 2027 届后端与 AI 工程方向机会。
 
-- **Languages**: Go / C / C++ / Python  
-- **Backend & Infra**: Linux / Docker / Kubernetes / MySQL / Redis / RabbitMQ / gRPC  
-- **DevOps & Tools**: VS Code / GitHub Actions / Prometheus / Grafana  
-- **Web (basic)**: JavaScript / React / HTML / CSS  
+[LinkedIn](https://www.linkedin.com/in/jiahui-pang-510065352/) · [Email](mailto:jiahuipaung@gmail.com)
 
----
+## Projects / 项目
 
-### 🚀 Projects & Interests
+### [Model Gateway Lab](https://github.com/jiahuipaung/model-gateway-lab)
 
-- **Payment Middleware**: High-concurrency payment platform (Go + Gin + RabbitMQ + Redis + MongoDB + MySQL), DDD architecture, integrated Alipay & WeChat Pay  
-- **llmaz**: K8s-based inference platform – worked on **Dragonfly integration** to enable efficient P2P model & image distribution  
-- **Crypto Gateway Service**: Backend service for wallet generation, on-chain deposit monitoring, and reconciliation (Go + Web3)  
+A Go control plane for asynchronous AI generation tasks. Handles idempotent submissions, uncertain provider responses, worker recovery, and event delivery, with a local Docker demo and PostgreSQL integration tests.
 
----
+模型调用超时后，任务究竟失败了，还是已经在供应商端执行？这个项目围绕长时生成任务，处理幂等提交、未知结果对账和故障恢复，并提供可本地复现的场景。
 
-## 📫 Connect With Me
+`Go` · `PostgreSQL` · `Docker`
 
-<div align="left">
-  <a href="https://www.linkedin.com/in/jiahui-pang-510065352/">
-    <img src="https://img.shields.io/badge/-LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn" />
-  </a>
-  <a href="mailto:jiahuipaung@gmail.com">
-    <img src="https://img.shields.io/badge/-Gmail-D14836?style=flat-square&logo=gmail&logoColor=white" alt="Gmail" />
-  </a>
-  <a href="https://steamcommunity.com/id/recul">
-    <img src="https://img.shields.io/badge/-Steam-171717?style=flat-square&logo=steam&logoColor=white" alt="Steam" />
-  </a>
-  <a href="https://www.recul.xyz">
-    <img src="https://img.shields.io/badge/-Garden-4A90E2?style=flat-square&logo=google-chrome&logoColor=white" alt="Website" />
-  </a>
-</div>
+[Code](https://github.com/jiahuipaung/model-gateway-lab) · [Design notes](https://github.com/jiahuipaung/model-gateway-lab/blob/main/docs/design/failure-windows.md)
+
+### [GOrder](https://github.com/jiahuipaung/gorder)
+
+A Go microservice project connecting orders, stock checks, Stripe payments, and fulfilment. Includes explicit state transitions and tests for duplicate payment events, concurrent updates, and message retries.
+
+串起下单、库存校验、支付回调到履约的业务流程。重点解决支付消息重复到达、订单状态并发更新和消费失败重试等问题，配有架构文档与测试。
+
+`Go` · `gRPC` · `MongoDB` · `MySQL` · `RabbitMQ` · `Stripe`
+
+[Code](https://github.com/jiahuipaung/gorder) · [Architecture](https://github.com/jiahuipaung/gorder/blob/main/docs/architecture/overview.md)
+
+## More of My Work / 其他实践
+
+### [llmaz](https://github.com/InftyAI/llmaz) · Open Source
+
+Worked on a Dragonfly integration proposal for this Kubernetes-based LLM inference platform, exploring P2P distribution of model files and container images. Also contributed a merged fix aligning the OpenModel example with its CRD.
+
+参与 Dragonfly 集成方案，探索通过 P2P 分发模型文件与容器镜像；另修复了 OpenModel 示例与 CRD 定义不一致的问题。
+
+[Dragonfly proposal](https://github.com/InftyAI/llmaz/pull/479) · [Merged contribution](https://github.com/InftyAI/llmaz/pull/481)
+
+### Global Search Infrastructure
+
+Contributed to an Algolia-to-Elasticsearch migration, including API compatibility, schema and filter adaptation, reliable index synchronization, and search result comparison.
+
+参与在线搜索迁移，处理新旧引擎的接口兼容、数据同步与结果差异。一次预发布故障测试让我进一步理解了“有重试”和“任务不会丢”之间的区别，也推动了写链路向 Transactional Outbox 演进。
+
+### Multi-Agent Content Workflow
+
+Contributed to a multi-agent workflow for crypto content production. My subsequent implementation explores separate brief and article pipelines, structured outputs, rule-based audits, and feedback-driven revision.
+
+参与 Crypto 内容生产工作流，并在后续实现中探索选题与写作分阶段、结构化输出、规则审计和反馈修订。我关心的是如何把规划、检索、写作和审核组织成一个能持续运行的流程。
+
+## Exploring / 最近在探索
+
+- Long-running AI tasks: recovery, reconciliation, and provider integration / AI 长任务与模型平台
+- Agent workflows: tool use, evaluation, and human review / Agent 工具调用、评测与人工审核
+- Turning project lessons into code and design notes / 把项目经验整理成代码与设计记录

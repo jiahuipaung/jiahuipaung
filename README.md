@@ -34,6 +34,14 @@ A Go microservice project connecting orders, stock checks, Stripe payments, and 
 
 ## More of My Work / 其他实践
 
+### [llmaz](https://github.com/InftyAI/llmaz) · Open Source
+
+Worked on a Dragonfly integration proposal for this Kubernetes-based LLM inference platform, exploring P2P distribution of model files and container images. Also contributed a merged fix aligning the OpenModel example with its CRD.
+
+参与 Dragonfly 集成方案，探索通过 P2P 分发模型文件与容器镜像；另修复了 OpenModel 示例与 CRD 定义不一致的问题。
+
+[Dragonfly proposal](https://github.com/InftyAI/llmaz/pull/479) · [Merged contribution](https://github.com/InftyAI/llmaz/pull/481)
+
 ### Global Search Infrastructure
 
 Contributed to an Algolia-to-Elasticsearch migration, including API compatibility, schema and filter adaptation, reliable index synchronization, and search result comparison.

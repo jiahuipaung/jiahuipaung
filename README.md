@@ -33,7 +33,7 @@ Jul 2023–Mar 2025 · Full-time
 Developed order, payment, and inventory services for virtual-product sales and subscriptions on an IoT platform. 
 从事物联平台虚拟商品销售与订阅业务的订单、支付和库存后端开发。
 
-## Projects / 项目
+## Projects
 
 ### [Model Gateway Lab](https://github.com/jiahuipaung/model-gateway-lab)
 
@@ -77,8 +77,7 @@ Contributed to a multi-agent workflow for crypto content production. My subseque
 
 参与 Crypto 内容生产工作流，并在后续实现中探索选题与写作分阶段、结构化输出、规则审计和反馈修订。我关心的是如何把规划、检索、写作和审核组织成一个能持续运行的流程。
 
-## Exploring / 最近在探索
+## Exploring
 
-- Long-running AI tasks: recovery, reconciliation, and provider integration / AI 长任务与模型平台
-- Agent workflows: tool use, evaluation, and human review / Agent 工具调用、评测与人工审核
-- Turning project lessons into code and design notes / 把项目经验整理成代码与设计记录
+- Long-running AI tasks: recovery, reconciliation, and provider integration
+- Agent workflows: tool use, evaluation, and human review / Agent
